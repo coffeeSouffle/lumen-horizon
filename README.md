@@ -1,6 +1,6 @@
 ## Introduction
 
-Based off https://github.com/servocoder/lumen-horizon - upgraded to Lumen Horizon 5 with Lumen 8.0 support
+Based off https://github.com/carsguide/lumen-horizon and `Laravel\Horizon` - upgraded to Lumen Horizon 5 with Lumen 8.0 support
 
 Tested with **Lumen 8.0**
 
@@ -8,19 +8,19 @@ Tested with **Lumen 8.0**
 
 The installation is almost the same as original package.
 
-Note that the package namespace remains `Laravel\Horizon`, so don't install it along with original one to avoid conflicts.  
+Note that the package namespace remains `Laravel\Horizon`, so don't install it along with original one to avoid conflicts.
 
 1. Composer dependency manager:
 
 ```bash
-    composer require carsguide/lumen-horizon "^5.0"
+    composer require coffeesouffle/lumen-horizon "^5.0"
 ```
 
 Alternatively, add the dependency directly to your composer.json file:
 
 ```
     "require": {
-        "carsguide/lumen-horizon": "^5.0"
+        "coffeesouffle/lumen-horizon": "^5.0"
     }
 ```
 

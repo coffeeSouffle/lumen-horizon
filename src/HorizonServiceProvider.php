@@ -20,7 +20,9 @@ class HorizonServiceProvider extends ServiceProvider
     {
         $this->registerEvents();
         $this->registerRoutes();
+        $this->registerResources();
         $this->registerRedisAlias();
+        $this->defineAssetPublishing();
     }
 
     /**
@@ -171,5 +173,27 @@ class HorizonServiceProvider extends ServiceProvider
         }
 
         $this->commands([Console\SnapshotCommand::class]);
+    }
+
+    /**
+     * Register the Horizon resources.
+     *
+     * @return void
+     */
+    protected function registerResources()
+    {
+        $this->loadViewsFrom(HORIZON_PATH.'/resources/views', 'horizon');
+    }
+
+    /**
+     * Define the asset publishing configuration.
+     *
+     * @return void
+     */
+    public function defineAssetPublishing()
+    {
+        $this->publishes([
+            HORIZON_PATH.'/public' => public_path('vendor/horizon'),
+        ], 'horizon-assets');
     }
 }

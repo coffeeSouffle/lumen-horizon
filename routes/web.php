@@ -1,5 +1,7 @@
 <?php
 
+$router->get('/', 'HomeController@index');
+
 // Protected API routes
 $router->group([
     'prefix' => 'api',
