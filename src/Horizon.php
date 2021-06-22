@@ -158,4 +158,29 @@ class Horizon
 
         return new static;
     }
+
+    public static function scriptVariables()
+    {
+        return [
+            'path' => config('horizon.path'),
+        ];
+    }
+
+    /**
+     * Determine if Horizon's published assets are up-to-date.
+     *
+     * @return bool
+     *
+     * @throws \RuntimeException
+     */
+    public static function assetsAreCurrent()
+    {
+        $publishedPath = './vendor/horizon/mix-manifest.json';
+
+        if (! File::exists($publishedPath)) {
+            throw new Exception('Horizon assets are not published. Please run: php artisan horizon:publish');
+        }
+
+        return File::get($publishedPath) === File::get(__DIR__.'/../public/mix-manifest.json');
+    }
 }
