@@ -18,7 +18,7 @@
         "ext-json": "*",
         "ext-pcntl": "*",
         "ext-posix": "*",
-        "coffeesouffle/lumen-helpers": "^0.1.1",
+        "coffeesouffle/lumen-helpers": "^0.1.2",
         "illuminate/contracts": "^8.0",
         "illuminate/queue": "^8.0",
         "illuminate/support": "^8.0",
